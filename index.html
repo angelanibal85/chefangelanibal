@@ -1,142 +1,231 @@
-
-
-<!DOCTYPE html>
+<!doctype html>
 <html lang="es">
 <head>
-  <meta charset="UTF-8">
-  <title>Chef Ángel Aníbal | chefangelanibal.com</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Chef Ángel Aníbal | Cocina & Eventos</title>
+  <meta name="description" content="Chef profesional especializado en cocina nacional, internacional y fusión. Eventos privados, cocina corporativa y asesoría.">
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;700&family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
   <style>
-    body {
-      margin: 0;
-      font-family: Arial, sans-serif;
-      background: #0b0b0b;
-      color: #ffffff;
+    :root{
+      --bg:#0b0b0d;
+      --card:#121216;
+      --text:#f2f2f3;
+      --muted:#b7b7bf;
+      --accent:#8b1e2d;
+      --gold:#d4af37;
+      --line:rgba(255,255,255,.08);
+      --radius:18px;
+      --shadow:0 18px 60px rgba(0,0,0,.55);
     }
-    header {
-      background: #5b1020;
-      padding: 25px;
-      text-align: center;
+    *{box-sizing:border-box}
+    body{
+      margin:0;
+      font-family:Inter,system-ui,-apple-system,Segoe UI,Roboto,Arial;
+      background:
+        radial-gradient(1000px 600px at 20% -10%, rgba(212,175,55,.10), transparent 55%),
+        radial-gradient(900px 600px at 90% 10%, rgba(139,30,45,.18), transparent 55%),
+        var(--bg);
+      color:var(--text);
     }
-    header h1 {
-      margin: 0;
-      letter-spacing: 2px;
+    a{color:inherit}
+    header{
+      position:sticky; top:0; z-index:50;
+      background:rgba(11,11,13,.75);
+      backdrop-filter:blur(10px);
+      border-bottom:1px solid var(--line);
     }
-    nav {
-      background: #111;
-      padding: 10px;
-      text-align: center;
+    nav{
+      max-width:1100px; margin:auto;
+      display:flex; justify-content:space-between; align-items:center;
+      padding:14px 18px;
     }
-    nav a {
-      color: #f2d48c;
-      margin: 0 12px;
-      text-decoration: none;
-      font-size: 14px;
+    .brand{font-weight:700; display:flex; gap:10px; align-items:center}
+    .dot{width:10px; height:10px; border-radius:50%; background:linear-gradient(135deg,var(--accent),var(--gold))}
+    .links{display:flex; gap:14px; align-items:center; flex-wrap:wrap}
+    .links a{color:var(--muted); text-decoration:none; padding:6px 10px; border-radius:10px}
+    .links a:hover{background:rgba(255,255,255,.05); color:var(--text)}
+    .btn{
+      border:1px solid var(--line);
+      background:rgba(255,255,255,.05);
+      padding:8px 12px;
+      border-radius:12px;
+      cursor:pointer;
     }
-    section {
-      max-width: 1000px;
-      margin: auto;
-      padding: 40px 20px;
+    .wrap{max-width:1100px; margin:auto; padding:26px 18px 60px}
+    .hero{display:grid; grid-template-columns:1.1fr .9fr; gap:18px; margin-top:18px}
+    .card{
+      background:linear-gradient(180deg, rgba(255,255,255,.06), rgba(255,255,255,.02));
+      border:1px solid var(--line);
+      border-radius:var(--radius);
+      box-shadow:var(--shadow);
     }
-    h2 {
-      color: #f2d48c;
-      border-bottom: 1px solid #444;
-      padding-bottom: 10px;
+    h1{
+      font-family:"Playfair Display",serif;
+      font-size:42px;
+      margin:0 0 8px;
     }
-    .grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-      gap: 20px;
+    h2{
+      font-family:"Playfair Display",serif;
+      margin:0 0 10px;
     }
-    .card {
-      background: #141414;
-      padding: 20px;
-      border-radius: 12px;
+    .hero-left{padding:26px}
+    .subtitle{color:var(--muted); max-width:55ch; line-height:1.6}
+    .pillrow{display:flex; flex-wrap:wrap; gap:10px; margin-top:16px}
+    .pill{
+      border:1px solid var(--line);
+      padding:7px 10px;
+      border-radius:999px;
+      font-size:13px;
+      color:var(--muted);
     }
-    .gallery img {
-      width: 100%;
-      border-radius: 10px;
+    .cta{display:flex; gap:10px; margin-top:18px; flex-wrap:wrap}
+    .cta a{text-decoration:none}
+    .primary{
+      background:linear-gradient(135deg,var(--accent),#5b0f1c);
+      border:none;
     }
-    .btn {
-      display: inline-block;
-      margin-top: 15px;
-      padding: 10px 25px;
-      background: #f2d48c;
-      color: #000;
-      text-decoration: none;
-      border-radius: 30px;
-      font-weight: bold;
+    .hero-right{overflow:hidden; position:relative}
+    .hero-right img{
+      width:100%; height:100%; object-fit:cover; display:block;
+      filter:saturate(1.05) contrast(1.05);
     }
-    footer {
-      background: #5b1020;
-      text-align: center;
-      padding: 20px;
-      font-size: 13px;
-      margin-top: 40px;
+    section{margin-top:18px}
+    .box{padding:18px}
+    .two{display:grid; grid-template-columns:1fr 1fr; gap:14px}
+    ul{margin:10px 0 0; padding-left:18px; color:var(--muted); line-height:1.7}
+    .services{display:grid; grid-template-columns:repeat(3,1fr); gap:14px}
+    .service{padding:18px}
+    .gallery{display:grid; grid-template-columns:repeat(4,1fr); gap:12px}
+    .gitem{overflow:hidden; border-radius:14px; border:1px solid var(--line)}
+    .gitem img{width:100%; height:180px; object-fit:cover}
+    .gcap{padding:8px 10px; font-size:13px; color:var(--muted); border-top:1px solid var(--line)}
+    .contact{display:grid; grid-template-columns:1.1fr .9fr; gap:14px}
+    footer{margin-top:18px; padding:18px; text-align:center; color:var(--muted); border-top:1px solid var(--line)}
+    @media(max-width:900px){
+      .hero,.two,.services,.gallery,.contact{grid-template-columns:1fr}
+      h1{font-size:34px}
     }
   </style>
 </head>
-
 <body>
 
 <header>
-  <h1>Chef Ángel Aníbal</h1>
-  <p>www.chefangelanibal.com</p>
+  <nav>
+    <div class="brand"><span class="dot"></span> Chef Ángel Aníbal</div>
+    <div class="links">
+      <a href="#sobre">Sobre mí</a>
+      <a href="#servicios">Servicios</a>
+      <a href="#galeria">Galería</a>
+      <a href="#contacto">Contacto</a>
+    </div>
+  </nav>
 </header>
 
-<nav>
-  <a href="#sobre">Sobre mí</a>
-  <a href="#servicios">Servicios</a>
-  <a href="#galeria">Galería</a>
-  <a href="#contacto">Contacto</a>
-</nav>
+<div class="wrap">
 
-<section id="sobre">
-  <h2>Sobre mí</h2>
-  <p>
-    Chef profesional con amplia experiencia en colectividades, cocina corporativa
-    y eventos privados. Especializado en cocina mediterránea, organización de equipos,
-    control de cocina y creación de menús.
-  </p>
-</section>
-
-<section id="servicios">
-  <h2>Servicios</h2>
-  <div class="grid">
-    <div class="card">
-      <h3>Eventos Privados</h3>
-      <p>Cenas exclusivas, celebraciones y experiencias gastronómicas personalizadas.</p>
+  <div class="hero">
+    <div class="card hero-left">
+      <h1>Experiencias gastronómicas con identidad</h1>
+      <p class="subtitle">
+        Cocina nacional, internacional y fusión para eventos privados,
+        cocina corporativa y asesoría gastronómica.
+      </p>
+      <div class="pillrow">
+        <div class="pill">Cocina fusión</div>
+        <div class="pill">Eventos privados</div>
+        <div class="pill">Cocina corporativa</div>
+        <div class="pill">Asesoría</div>
+      </div>
+      <div class="cta">
+        <a class="btn primary" href="mailto:anibal85@hotmail.es">Pedir propuesta</a>
+        <a class="btn" href="#galeria">Ver platos</a>
+      </div>
     </div>
-    <div class="card">
-      <h3>Cocina Corporativa</h3>
-      <p>Gestión de cocinas en empresas, residencias y centros institucionales.</p>
-    </div>
-    <div class="card">
-      <h3>Asesoría</h3>
-      <p>Creación de menús, organización de equipos y optimización de cocina.</p>
+    <div class="card hero-right">
+      <!-- CAMBIA esta imagen por la de portada -->
+      <img src="assets/img/cover.jpg" alt="Chef Ángel Aníbal">
     </div>
   </div>
-</section>
 
-<section id="galeria">
-  <h2>Galería</h2>
-  <div class="grid gallery">
-    <img src="https://images.pexels.com/photos/70497/pexels-photo-70497.jpeg" alt="Plato 1">
-    <img src="https://images.pexels.com/photos/958545/pexels-photo-958545.jpeg" alt="Plato 2">
-    <img src="https://images.pexels.com/photos/262978/pexels-photo-262978.jpeg" alt="Plato 3">
-  </div>
-</section>
+  <section id="sobre" class="card box">
+    <h2>Sobre mí</h2>
+    <p class="subtitle">
+      Soy Chef profesional especializado en cocina nacional, internacional y cocina fusión,
+      con una sólida influencia de la gastronomía latinoamericana, combinada con técnicas
+      contemporáneas y una cuidada ejecución.
+    </p>
+    <p class="subtitle">
+      He trabajado en cocina corporativa, eventos privados y residencias, liderando equipos
+      de cocina y gestionando la organización integral del servicio: planificación de menús,
+      producción, control de stocks, seguridad alimentaria y coordinación de equipos.
+    </p>
+    <p class="subtitle">
+      Mi cocina se basa en la fusión de sabores, el respeto al producto y una presentación
+      elegante, adaptándome a cada cliente y formato de servicio.
+    </p>
+    <ul>
+      <li>Cocina nacional e internacional</li>
+      <li>Cocina fusión y gastronomía latinoamericana</li>
+      <li>Eventos privados y cocina corporativa</li>
+      <li>Creación de menús y planificación</li>
+      <li>Liderazgo de equipos de cocina</li>
+      <li>Control de calidad y seguridad alimentaria (APPCC)</li>
+    </ul>
+  </section>
 
-<section id="contacto">
-  <h2>Contacto</h2>
-  <p><strong>Email:</strong> anibal85@hotmail.es</p>
-  <p><strong>Teléfono:</strong> +34 620 277 419</p>
-  <a class="btn" href="mailto:anibal85@hotmail.es">Escribir ahora</a>
-</section>
+  <section id="servicios" class="card box">
+    <h2>Servicios</h2>
+    <div class="services">
+      <div class="card service">
+        <h3>Eventos privados</h3>
+        <p>Cenas exclusivas, celebraciones y experiencias gastronómicas personalizadas.</p>
+      </div>
+      <div class="card service">
+        <h3>Cocina corporativa</h3>
+        <p>Gestión de cocina en empresas, residencias y centros institucionales.</p>
+      </div>
+      <div class="card service">
+        <h3>Asesoría</h3>
+        <p>Diseño de menús, organización de equipos y optimización de cocina.</p>
+      </div>
+    </div>
+  </section>
 
-<footer>
-  © 2025 chefangelanibal.com · Chef Ángel Aníbal
-</footer>
+  <section id="galeria" class="card box">
+    <h2>Galería</h2>
+    <div class="gallery">
+      <!-- CAMBIA las imágenes por las tuyas -->
+      <div class="gitem"><img src="assets/img/plato-01.jpg"><div class="gcap">Creación gastronómica</div></div>
+      <div class="gitem"><img src="assets/img/plato-02.jpg"><div class="gcap">Producto & técnica</div></div>
+      <div class="gitem"><img src="assets/img/plato-03.jpg"><div class="gcap">Cocina de autor</div></div>
+      <div class="gitem"><img src="assets/img/plato-04.jpg"><div class="gcap">Presentación cuidada</div></div>
+    </div>
+  </section>
 
+  <section id="contacto" class="card box">
+    <h2>Contacto</h2>
+    <div class="contact">
+      <div class="card box">
+        <p><strong>¿Te preparo una propuesta?</strong><br>
+        Indícame fecha, número de personas y tipo de servicio.</p>
+        <div class="cta">
+          <a class="btn primary" href="mailto:anibal85@hotmail.es">Email</a>
+          <a class="btn" href="tel:+34620277419">Llamar</a>
+        </div>
+      </div>
+      <div class="card box">
+        <p><strong>Email:</strong> anibal85@hotmail.es</p>
+        <p><strong>Tel:</strong> +34 620 277 419</p>
+        <p><strong>Web:</strong> chefangelanibal.com</p>
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    © 2025 Chef Ángel Aníbal · Cocina con técnica, producto y alma
+  </footer>
+
+</div>
 </body>
 </html>
